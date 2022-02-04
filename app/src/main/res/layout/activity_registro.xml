@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".Registro"
+    android:background="@color/color3">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal"
+        android:text="Registrarse"
+        android:textAlignment="center"
+        android:textColor="@color/color4"
+        android:textSize="28sp" />
+
+    <EditText
+        android:id="@+id/RegistroNombre"
+        android:layout_width="match_parent"
+        android:layout_height="56dp"
+        android:inputType="text"
+        android:hint="Nombre" />
+
+    <EditText
+        android:id="@+id/RegistroApellido"
+        android:layout_width="match_parent"
+        android:layout_height="56dp"
+        android:inputType="text"
+        android:hint="Apellidos" />
+
+
+    <EditText
+        android:id="@+id/registroEmail"
+        android:layout_width="match_parent"
+        android:layout_height="56dp"
+        android:inputType="textEmailAddress"
+        android:hint="Email" />
+    <EditText
+        android:id="@+id/registroPass"
+        android:layout_width="match_parent"
+        android:layout_height="56dp"
+        android:inputType="textPassword"
+        android:hint="Password"
+        tools:ignore="TextViewEdits" />
+    <EditText
+        android:id="@+id/registroPass2"
+        android:layout_width="match_parent"
+        android:layout_height="56dp"
+        android:inputType="textPassword"
+        android:hint="Repeat password"
+        android:layout_marginBottom="100dp"/>
+
+    <Button
+        android:id="@+id/registroBoton"
+        android:layout_width="match_parent"
+        android:layout_height="56dp"
+        android:text="Registrarse"
+        android:layout_marginBottom="20dp"/>
+
+    <Button
+        android:id="@+id/YaTengoCuenta"
+        android:layout_width="match_parent"
+        android:layout_height="56dp"
+        android:text="Ya tengo cuenta" />
+
+</LinearLayout>

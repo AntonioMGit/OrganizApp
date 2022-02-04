@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".Login">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal"
+        android:text="Iniciar secion"
+        android:textAlignment="center"
+        android:textColor="@color/color4"
+        android:textSize="28sp" />
+
+    <EditText
+        android:id="@+id/loginEmail"
+        android:layout_width="match_parent"
+        android:layout_height="56dp"
+        android:inputType="textEmailAddress"
+        android:hint="email" />
+    <EditText
+        android:id="@+id/loginPass"
+        android:layout_width="match_parent"
+        android:layout_height="56dp"
+        android:inputType="textPassword"
+        android:hint="password"
+        tools:ignore="TextViewEdits" />
+    <Button
+        android:id="@+id/loginBoton"
+        android:layout_width="match_parent"
+        android:layout_height="56dp"
+        android:text="Iniciar sesion" />
+
+    <Button
+        android:id="@+id/loginRegistro"
+        android:layout_width="match_parent"
+        android:layout_height="56dp"
+        android:text="Crear Cuenta" />
+</LinearLayout>
