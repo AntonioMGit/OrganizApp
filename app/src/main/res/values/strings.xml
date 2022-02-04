@@ -1,3 +1,10 @@
 <resources>
     <string name="app_name">OrganizApp</string>
+
+    <string-array name="tipos">
+        <item>Seleccionar</item>
+        <item>Gasto</item>
+        <item>Ahorro</item>
+    </string-array>
+
 </resources>
