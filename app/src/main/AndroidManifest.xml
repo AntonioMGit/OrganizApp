@@ -10,7 +10,19 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.OrganizApp">
         <activity
+            android:name=".AddMovimientoCategorias"
+            android:exported="false" />
+        <activity
+            android:name=".PantallaGastosCategorias"
+            android:exported="false" />
+        <activity
+            android:name=".Pantalla1"
+            android:exported="true" />
+        <activity
             android:name=".Registro"
+            android:exported="true" />
+        <activity
+            android:name=".AddMovimientoActivity"
             android:exported="true" />
         <activity
             android:name=".Login"

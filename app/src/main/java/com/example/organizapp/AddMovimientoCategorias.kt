@@ -2,8 +2,6 @@ package com.example.organizapp
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.widget.EditText
-import android.widget.Spinner
 import android.util.Log
 import android.view.View
 import android.widget.*
@@ -13,8 +11,8 @@ import com.google.firebase.firestore.FirebaseFirestore
 import com.google.firebase.ktx.Firebase
 import java.time.LocalDate
 
+class AddMovimientoCategorias : AppCompatActivity() {
 
-class AddMovimientoActivity : AppCompatActivity() {
     private lateinit var spinner: Spinner
     private lateinit var nombre : EditText
     private lateinit var importe : EditText
@@ -32,8 +30,7 @@ class AddMovimientoActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_add_movimiento)
-
+        setContentView(R.layout.activity_add_movimiento_categorias)
         auth = Firebase.auth
 
         inicializarVariables()
@@ -48,7 +45,7 @@ class AddMovimientoActivity : AppCompatActivity() {
                 if (parent != null) {
                     seleccion = parent.getItemAtPosition(position).toString()
                 }
-                Log.i(TAG, "Tipo: $seleccion")
+                Log.i(AddMovimientoActivity.TAG, "Tipo: $seleccion")
             }
 
         }
@@ -75,7 +72,7 @@ class AddMovimientoActivity : AppCompatActivity() {
 
         gastos.get().addOnSuccessListener { documents ->
             for (document in documents) {
-                Log.d(TAG, "${document.id} => ${document.data}")
+                Log.d(AddMovimientoActivity.TAG, "${document.id} => ${document.data}")
             }
         }
 
@@ -90,10 +87,10 @@ class AddMovimientoActivity : AppCompatActivity() {
         todos.get().addOnSuccessListener { documents -> //esto es un hilo ¿?¿?¿?
             for (document in documents) {
                 cuantos += 1
-                Log.d(TAG, "pasa " + cuantos.toString())
+                Log.d(AddMovimientoActivity.TAG, "pasa " + cuantos.toString())
 
                 //lo introduce
-                Log.d(TAG, "despues " + cuantos.toString())
+                Log.d(AddMovimientoActivity.TAG, "despues " + cuantos.toString())
                 //https://firebase.google.com/docs/firestore/data-model?hl=es-419
                 db.collection("Usuarios").document("key").collection(seleccion.toString()).document(seleccion.toString() + cuantos.toString()).set(
                     hashMapOf(
@@ -106,7 +103,7 @@ class AddMovimientoActivity : AppCompatActivity() {
 
             }
         }.addOnFailureListener {
-            Log.d(TAG, "mal")
+            Log.d(AddMovimientoActivity.TAG, "mal")
         }
 
 
@@ -206,7 +203,7 @@ class AddMovimientoActivity : AppCompatActivity() {
     private fun configurarSpinner() {
         ArrayAdapter.createFromResource(
             this,
-            R.array.tipos, //Lista de opciones
+            R.array.tiposCategorias, //Lista de opciones
             android.R.layout.simple_spinner_item //Estilo
         ).also { adapter ->
             //Estilo de la lista de opciones
@@ -228,6 +225,7 @@ class AddMovimientoActivity : AppCompatActivity() {
         fecha.setText("$day/"+ (month+1) + "/$year")
         fechaSeleccionada = LocalDate.of(year, (month+1), day)
 
-        Log.i(TAG, "Fecha: $fechaSeleccionada")
+        Log.i(AddMovimientoActivity.TAG, "Fecha: $fechaSeleccionada")
     }
+
 }

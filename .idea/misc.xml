@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="DesignSurface">
+    <option name="filePathToZoomLevelMap">
+      <map>
+        <entry key="..\:/DAM2.2/PMDM/Proyectos/OrganizApp-master/app/src/main/res/layout/activity_add_movimiento.xml" value="0.333786231884058" />
+        <entry key="..\:/DAM2.2/PMDM/Proyectos/OrganizApp-master/app/src/main/res/layout/activity_add_movimiento_categorias.xml" value="0.333786231884058" />
+        <entry key="..\:/DAM2.2/PMDM/Proyectos/OrganizApp-master/app/src/main/res/layout/activity_pantalla1.xml" value="0.333786231884058" />
+        <entry key="..\:/DAM2.2/PMDM/Proyectos/OrganizApp-master/app/src/main/res/layout/activity_pantalla_gastos_categorias.xml" value="0.333786231884058" />
+        <entry key="..\:/DAM2.2/PMDM/Proyectos/OrganizApp/app/src/main/res/layout/activity_pantalla1.xml" value="0.26992753623188404" />
+      </map>
+    </option>
+  </component>
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="Android Studio default JDK" project-jdk-type="JavaSDK">
+    <output url="file://$PROJECT_DIR$/build/classes" />
+  </component>
+  <component name="ProjectType">
+    <option name="id" value="Android" />
+  </component>
+</project>

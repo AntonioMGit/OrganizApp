@@ -7,4 +7,16 @@
         <item>Ahorro</item>
     </string-array>
 
+    <string-array name="tiposCategorias">
+        <item>Seleccionar</item>
+        <item>Facturas</item>
+        <item>Regalos</item>
+        <item>Vacaciones</item>
+        <item>Salud</item>
+        <item>Compras</item>
+        <item>Comida</item>
+        <item>Vehiculos</item>
+        <item>Gasolina</item>
+        <item>Casa</item>
+    </string-array>
 </resources>
