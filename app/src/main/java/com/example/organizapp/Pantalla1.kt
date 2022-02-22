@@ -5,19 +5,28 @@ import android.graphics.Color
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
+import android.widget.EditText
 import lecho.lib.hellocharts.model.PieChartData
 import lecho.lib.hellocharts.model.SliceValue
 import lecho.lib.hellocharts.view.PieChartView
+import java.time.LocalDate
+import java.time.Month
 
 private lateinit var chart: PieChartView
 
 class Pantalla1 : AppCompatActivity() {
 
+    private lateinit var fecha: EditText
     var pieChartView: PieChartView? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_pantalla1)
+
+        fecha = findViewById(R.id.inputFecha)
+        var f = LocalDate.now()
+        fecha.setText("${mesSpanish(f.monthValue)} de ${f.year}")
+        fecha.setOnClickListener { showDatePickerDialog() }
 
         lateinit var btnMas: Button
         lateinit var btnGraficoCategorias: Button
@@ -55,6 +64,38 @@ class Pantalla1 : AppCompatActivity() {
         btnLista.setOnClickListener {
             val intent = Intent(this, PantallaGastosCategorias::class.java)
             startActivity(intent) } */
+    }
+
+
+    //Inicializar el dialogo creado en onCreateDialog de la clase DatePickerDialog
+    private fun showDatePickerDialog() {
+        //Crear un objeto de la clase DatePickerDialog
+        val datePicker = DatePickerFragment { day, month, year -> onDateSelected(day, month, year) }
+        datePicker.show(supportFragmentManager, "datePicker")
+    }
+
+    //Funcion que se le pasa a DatePickerDialog al crearlo. Cuando ya se ha seleccionado una fecha, se llama a este metodo
+    private fun onDateSelected(day:Int, month:Int, year:Int){
+        fecha.setText("${(mesSpanish(month+1))} de $year")
+    }
+
+    private fun mesSpanish(numero: Int): String{
+        var mes: String = ""
+        when (numero) {
+            1 -> mes = "Enero"
+            2 -> mes = "Febrero"
+            3 -> mes = "Marzo"
+            4 -> mes = "Abril"
+            5 -> mes = "Mayo"
+            6 -> mes = "Junio"
+            7 -> mes = "Julio"
+            8 -> mes = "Agosto"
+            9 -> mes = "Septiembre"
+            10 -> mes = "Octubre"
+            11 -> mes = "Noviembre"
+            12 -> mes = "Diciembre"
+        }
+        return mes
     }
 }
 

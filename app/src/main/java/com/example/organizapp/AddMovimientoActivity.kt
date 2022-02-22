@@ -228,6 +228,6 @@ class AddMovimientoActivity : AppCompatActivity() {
         fecha.setText("$day/"+ (month+1) + "/$year")
         fechaSeleccionada = LocalDate.of(year, (month+1), day)
 
-        Log.i(TAG, "Fecha: $fechaSeleccionada")
+        //Log.i(TAG, "Fecha: $fechaSeleccionada")
     }
 }
