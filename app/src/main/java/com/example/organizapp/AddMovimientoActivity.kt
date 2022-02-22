@@ -7,6 +7,7 @@ import android.widget.Spinner
 import android.util.Log
 import android.view.View
 import android.widget.*
+import com.example.organizapp.Login.Companion.keyUser
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.ktx.auth
 import com.google.firebase.firestore.FirebaseFirestore
@@ -71,7 +72,7 @@ class AddMovimientoActivity : AppCompatActivity() {
         //https://firebase.google.com/docs/firestore/query-data/queries?hl=es-419#collection-group-query
         val db = FirebaseFirestore.getInstance()
 
-        val gastos = db.collection("Usuarios").document("key") .collection(seleccion.toString())
+        val gastos = db.collection("Usuarios").document(keyUser) .collection(seleccion.toString())
 
         gastos.get().addOnSuccessListener { documents ->
             for (document in documents) {
@@ -84,111 +85,37 @@ class AddMovimientoActivity : AppCompatActivity() {
     private fun guardarDatosFB(){
         val db = FirebaseFirestore.getInstance()
 
+        //hay que insertar uno por defecto siempre?
+        db.collection("Usuarios").document(keyUser).collection(seleccion.toString()).document(seleccion.toString() + "por defecto").set(
+            hashMapOf(
+                "Nombre" to "",
+                "Importe" to "",
+                "Fecha" to ""
+            )
+        )
+
         //los busca todos y los cuenta para ver cuantos hay
         var cuantos = 0
-        val todos = db.collection("Usuarios").document("key") .collection(seleccion.toString())
+        val todos = db.collection("Usuarios").document(keyUser).collection(seleccion.toString())
+
         todos.get().addOnSuccessListener { documents -> //esto es un hilo ¿?¿?¿?
+            Log.d(TAG, "pasa " + cuantos.toString())
             for (document in documents) {
                 cuantos += 1
-                Log.d(TAG, "pasa " + cuantos.toString())
-
                 //lo introduce
                 Log.d(TAG, "despues " + cuantos.toString())
                 //https://firebase.google.com/docs/firestore/data-model?hl=es-419
-                db.collection("Usuarios").document("key").collection(seleccion.toString()).document(seleccion.toString() + cuantos.toString()).set(
+                db.collection("Usuarios").document(keyUser).collection(seleccion.toString()).document(seleccion.toString() + cuantos.toString()).set(
                     hashMapOf(
                         "Nombre" to nombre.text.toString(),
                         "Importe" to importe.text.toString(),
                         "Fecha" to fecha.text.toString()
                     )
                 )
-
-
             }
         }.addOnFailureListener {
             Log.d(TAG, "mal")
         }
-
-
-        /*
-        db.collection("usu").document("key").set(
-            hashMapOf(
-                "correo" to "correo1",
-                "pass" to "pass1"
-            )
-        )
-        db.collection("usu").document("key").collection("gastos").document("gasto1").set(
-            hashMapOf(
-                "nombre" to "nombre1",
-                "cantidad" to "50"
-            )
-        )
-        db.collection("usu").document("key").collection("ingresos").document("ingreso1").set(
-            hashMapOf(
-                "nombre" to "nombre2",
-                "cantidad" to "60"
-            )
-        )
-        db.collection("usu").document("key").collection("ingresos").document("ingreso2").set(
-            hashMapOf(
-                "nombre" to "nombre3",
-                "cantidad" to "10"
-            )
-        )
-        */
-        /*
-        db.collection("a").document("b").set(
-            hashMapOf(
-                "c" to "c",
-                "d" to "d"
-            )
-        )
-        */
-
-        //db.collection("a").document("b").set("asadsa" to "ada")
-
-        /*
-        db.collection("Movimientos").document(nombre.text.toString()).set(
-            hashMapOf("Tipo" to seleccion.toString(),
-                "Nombre" to nombre.text.toString(),
-                "Importe" to importe.text.toString(),
-                //"Importe" to Integer.parse(importe.toString()),
-                "Fecha" to fecha.text.toString()
-            )
-        ).addOnSuccessListener { Toast.makeText(this, "Movimiento realizado correctamente",
-            Toast.LENGTH_SHORT
-        ).show() }.addOnFailureListener { Toast.makeText(this, "Movimiento incorrecto",
-            Toast.LENGTH_SHORT
-        ).show()}
-       */
-
-        /*
-        db.collection("Usuarios").document("usuario1").set(
-          db.document(seleccion.toString()).set(
-                db.document(nombre.text.toString()).set(
-                    hashMapOf(
-                        "Importe" to importe.text.toString(),
-                        "Fecha" to fecha.text.toString()
-                    )
-                )
-            )
-                    /*
-            hashMapOf("Tipo" to seleccion.toString(),
-                "Nombre" to nombre.text.toString(),
-                "Importe" to importe.text.toString(),
-                //"Importe" to Integer.parse(importe.toString()),
-                "Fecha" to fecha.text.toString()
-            )
-
-                     */
-
-        ).addOnSuccessListener { Toast.makeText(this, "Movimiento realizado correctamente",
-            Toast.LENGTH_SHORT
-        ).show() }.addOnFailureListener { Toast.makeText(this, "Movimiento incorrecto",
-            Toast.LENGTH_SHORT
-        ).show()}
-         */
-
 
     }
 

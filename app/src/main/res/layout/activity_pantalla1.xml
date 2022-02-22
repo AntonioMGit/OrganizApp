@@ -28,10 +28,10 @@
         android:layout_alignParentTop="true"
         android:layout_alignParentEnd="true"
         android:layout_alignParentBottom="true"
-        android:layout_marginStart="24dp"
-        android:layout_marginTop="660dp"
-        android:layout_marginEnd="302dp"
-        android:layout_marginBottom="5dp"
+        android:layout_marginStart="33dp"
+        android:layout_marginTop="626dp"
+        android:layout_marginEnd="293dp"
+        android:layout_marginBottom="39dp"
         android:background="@drawable/lista" />
 
     <Button
@@ -42,10 +42,10 @@
         android:layout_alignParentTop="true"
         android:layout_alignParentEnd="true"
         android:layout_alignParentBottom="true"
-        android:layout_marginStart="171dp"
-        android:layout_marginTop="667dp"
-        android:layout_marginEnd="158dp"
-        android:layout_marginBottom="6dp"
+        android:layout_marginStart="162dp"
+        android:layout_marginTop="626dp"
+        android:layout_marginEnd="167dp"
+        android:layout_marginBottom="47dp"
         android:background="@drawable/mas" />
 
     <Button
@@ -56,10 +56,10 @@
         android:layout_alignParentTop="true"
         android:layout_alignParentEnd="true"
         android:layout_alignParentBottom="true"
-        android:layout_marginStart="306dp"
-        android:layout_marginTop="663dp"
-        android:layout_marginEnd="22dp"
-        android:layout_marginBottom="4dp"
+        android:layout_marginStart="304dp"
+        android:layout_marginTop="627dp"
+        android:layout_marginEnd="24dp"
+        android:layout_marginBottom="40dp"
         android:background="@drawable/grd" />
 
     <EditText
