@@ -1,5 +1,6 @@
 package com.example.organizapp
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.EditText
@@ -59,11 +60,13 @@ class AddMovimientoActivity : AppCompatActivity() {
 
         aceptar.setOnClickListener{
             guardarDatosFB()
+            startActivity(Intent(this, Pantalla1::class.java))
         }
 
         //lo pongo aqui para probar, hay que quitarlo de este boton
         cancelar.setOnClickListener {
-            recogerDatosFB()
+            //recogerDatosFB()
+            startActivity(Intent(this, Pantalla1::class.java))
         }
 
     }
@@ -88,9 +91,9 @@ class AddMovimientoActivity : AppCompatActivity() {
         //hay que insertar uno por defecto siempre?
         db.collection("Usuarios").document(keyUser).collection(seleccion.toString()).document(seleccion.toString() + "por defecto").set(
             hashMapOf(
-                "Nombre" to "",
-                "Importe" to "",
-                "Fecha" to ""
+                "Nombre" to "0",
+                "Importe" to "0",
+                "Fecha" to "0/0/0"
             )
         )
 
