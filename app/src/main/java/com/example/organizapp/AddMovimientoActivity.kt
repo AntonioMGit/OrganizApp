@@ -97,26 +97,20 @@ class AddMovimientoActivity : AppCompatActivity() {
             )
         )
 
-        //los busca todos y los cuenta para ver cuantos hay
-        var cuantos = 0
         val todos = db.collection("Usuarios").document(keyUser).collection(seleccion.toString())
 
         todos.get().addOnSuccessListener { documents -> //esto es un hilo ¿?¿?¿?
-            Log.d(TAG, "pasa " + cuantos.toString())
-            for (document in documents) {
-                cuantos += 1
-                //lo introduce
-                Log.d(TAG, "despues " + cuantos.toString())
-                //https://firebase.google.com/docs/firestore/data-model?hl=es-419
-                db.collection("Usuarios").document(keyUser).collection(seleccion.toString()).document(seleccion.toString() + cuantos.toString()).set(
-                    hashMapOf(
-                        "Nombre" to nombre.text.toString(),
-                        "Importe" to importe.text.toString(),
-                        "Fecha" to fecha.text.toString()
-                    )
+            documents.size()
+            //lo introduce
+            //https://firebase.google.com/docs/firestore/data-model?hl=es-419
+            db.collection("Usuarios").document(keyUser).collection(seleccion.toString()).document(seleccion.toString() + documents.size().toString()).set(
+                hashMapOf(
+                    "Nombre" to nombre.text.toString(),
+                    "Importe" to importe.text.toString(),
+                    "Fecha" to fecha.text.toString()
                 )
-            }
-        }.addOnFailureListener {
+            )
+            }.addOnFailureListener {
             Log.d(TAG, "mal")
         }
 

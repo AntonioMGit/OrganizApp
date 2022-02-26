@@ -32,12 +32,12 @@ class Pantalla1 : AppCompatActivity() {
         fecha.setOnClickListener { showDatePickerDialog() }
 
         lateinit var btnMas: Button
-        lateinit var btnGraficoCategorias: Button
+        lateinit var btnGrafica: Button
         //lateinit var btnLista: Button
 
 
         btnMas = findViewById(R.id.BotonMas)
-        btnGraficoCategorias = findViewById(R.id.BotonGrafica)
+        btnGrafica = findViewById(R.id.BotonGrafica)
         //btnLista = findViewById(R.id.BotonListado)
 
 
@@ -70,8 +70,8 @@ class Pantalla1 : AppCompatActivity() {
             val intent = Intent(this, AddMovimientoActivity::class.java)
             startActivity(intent) }
 
-        btnGraficoCategorias.setOnClickListener {
-            val intent = Intent(this, PantallaGastosCategorias::class.java)
+        btnGrafica.setOnClickListener {
+            val intent = Intent(this, GraficosPorMeses::class.java)
             startActivity(intent) }
         /*
         btnLista.setOnClickListener {
