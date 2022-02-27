@@ -10,6 +10,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.OrganizApp">
         <activity
+            android:name=".ListadoMovimientos"
+            android:exported="false" />
+        <activity
             android:name=".GraficosPorMeses"
             android:exported="true" />
         <activity
