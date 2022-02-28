@@ -83,7 +83,7 @@ class AddMovimientoCategorias : AppCompatActivity() {
 
         //los busca todos y los cuenta para ver cuantos hay
         var cuantos = 0
-        val todos = db.collection("Usuarios").document("key") .collection(seleccion.toString())
+        val todos = db.collection("Usuarios").document("key").collection(seleccion.toString())
         todos.get().addOnSuccessListener { documents -> //esto es un hilo ¿?¿?¿?
             for (document in documents) {
                 cuantos += 1

@@ -119,7 +119,7 @@ class Pantalla1 : AppCompatActivity() {
                 //Toast.makeText(applicationContext, "Mes: " + numMes, Toast.LENGTH_LONG).show()
                 if(numMes.equals(month.toString())) {
                     //Log.d("noseque", "pasa")
-                    pieData.add(SliceValue(54f, Color.RED).setLabel(document.data.get("Nombre").toString() + ": " + document.get("Importe").toString()))
+                    pieData.add(SliceValue(document.get("Importe").toString().toFloat(), Color.RED).setLabel(document.data.get("Nombre").toString() + ": " + document.get("Importe").toString()))
 
                 }
 
@@ -140,7 +140,7 @@ class Pantalla1 : AppCompatActivity() {
                 var numMes = fechaSeparada.get(1)
                 //Toast.makeText(applicationContext, "Mes: " + numMes, Toast.LENGTH_LONG).show()
                 if(numMes.equals(month.toString())) {
-                    pieData.add(SliceValue(100f, Color.GREEN).setLabel(document.data.get("Nombre").toString() + ": " + document.get("Importe").toString()))
+                    pieData.add(SliceValue(document.get("Importe").toString().toFloat(), Color.GREEN).setLabel(document.data.get("Nombre").toString() + ": " + document.get("Importe").toString()))
                 }
 
             }

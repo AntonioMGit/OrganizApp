@@ -45,7 +45,7 @@ class GraficosPorMeses : AppCompatActivity() {
     private fun buscarEnAnio(anio: String, tipo:String){
 
         val db = FirebaseFirestore.getInstance()
-        val gastos = db.collection("Usuarios").document("aa@aa.aa") .collection(tipo.toString()) //cambiar la key por Login.keyUser
+        val gastos = db.collection("Usuarios").document(Login.keyUser) .collection(tipo.toString()) //cambiar la key por Login.keyUser
         var fechaSeparada: List<String>
 
         var gastosArray: IntArray = intArrayOf(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0)
