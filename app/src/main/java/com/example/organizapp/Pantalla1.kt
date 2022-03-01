@@ -33,15 +33,19 @@ class Pantalla1 : AppCompatActivity() {
 
         lateinit var btnMas: Button
         lateinit var btnGrafica: Button
-        //lateinit var btnLista: Button
+        lateinit var btnLista: Button
 
 
         btnMas = findViewById(R.id.BotonMas)
         btnGrafica = findViewById(R.id.BotonGrafica)
-        //btnLista = findViewById(R.id.BotonListado)
+        btnLista = findViewById(R.id.BotonListado)
 
 
         ponerDatosEnGrafica(f.monthValue)
+
+        btnLista.setOnClickListener {
+            val intent = Intent(this, ListadoMovimientos::class.java)
+            startActivity(intent) }
 
 
         /*

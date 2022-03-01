@@ -84,7 +84,6 @@ class GraficosPorMeses : AppCompatActivity() {
         for (i in axisData.indices) {
             axisValues.add(i, AxisValue(i.toFloat()).setLabel(axisData[i]))
         }
-
         for (i in gastosArray.indices) {
             yAxisValues.add(PointValue(i.toFloat(), gastosArray[i].toFloat()))
         }
@@ -102,7 +101,7 @@ class GraficosPorMeses : AppCompatActivity() {
         data.axisXBottom = axis
 
         val yAxis = Axis()
-        yAxis.name = "Sales in millions"
+        yAxis.name = "Movimientos"
         yAxis.textColor = Color.parseColor("#03A9F4")
         yAxis.textSize = 16
         data.axisYLeft = yAxis

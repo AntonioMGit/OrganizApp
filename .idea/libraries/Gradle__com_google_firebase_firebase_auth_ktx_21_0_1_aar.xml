@@ -3,8 +3,6 @@
     <CLASSES>
       <root url="file://$USER_HOME$/.gradle/caches/transforms-3/376034ef9ff86a64741833212790bf23/transformed/jetified-firebase-auth-ktx-21.0.1/res" />
       <root url="file://$USER_HOME$/.gradle/caches/transforms-3/b15d1e0f272856237a2e7b7884beaecc/transformed/jetified-firebase-auth-ktx-21.0.1/res" />
-      <root url="jar://$USER_HOME$/.gradle/caches/transforms-3/b15d1e0f272856237a2e7b7884beaecc/transformed/jetified-firebase-auth-ktx-21.0.1/jars/classes.jar!/" />
-      <root url="file://$USER_HOME$/.gradle/caches/transforms-3/b15d1e0f272856237a2e7b7884beaecc/transformed/jetified-firebase-auth-ktx-21.0.1/AndroidManifest.xml" />
       <root url="file://$USER_HOME$/.gradle/caches/transforms-3/376034ef9ff86a64741833212790bf23/transformed/jetified-firebase-auth-ktx-21.0.1/AndroidManifest.xml" />
       <root url="jar://$USER_HOME$/.gradle/caches/transforms-3/376034ef9ff86a64741833212790bf23/transformed/jetified-firebase-auth-ktx-21.0.1/jars/classes.jar!/" />
     </CLASSES>
