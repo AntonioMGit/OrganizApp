@@ -1,5 +1,4 @@
 package com.example.organizapp
-
 import android.graphics.Color
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -66,8 +65,10 @@ class ListadoMovimientos : AppCompatActivity() {
 
         gastos.get().addOnSuccessListener { documents ->
             for (document in documents) {
-                var m = Movimiento(document.data.get("Nombre").toString(), 1, document.get("Importe").toString().toDouble(), document.get("Fecha").toString())
-                lista.add(m)
+                if(!document.data.get("Fecha").toString().equals("0/0/0")) {
+                    var m = Movimiento(document.data.get("Nombre").toString(), 1, document.get("Importe").toString().toDouble(), document.get("Fecha").toString())
+                    lista.add(m)
+                }
             }
 
             obtenerAhorros()
@@ -84,8 +85,10 @@ class ListadoMovimientos : AppCompatActivity() {
 
         ingresos.get().addOnSuccessListener { documents ->
             for (document in documents) {
-                var m = Movimiento(document.data.get("Nombre").toString(), 2, document.get("Importe").toString().toDouble(), document.get("Fecha").toString())
-                lista.add(m)
+                if(!document.data.get("Fecha").toString().equals("0/0/0")) {
+                    var m = Movimiento(document.data.get("Nombre").toString(), 1, document.get("Importe").toString().toDouble(), document.get("Fecha").toString())
+                    lista.add(m)
+                }
             }
 
             pintarDatos()

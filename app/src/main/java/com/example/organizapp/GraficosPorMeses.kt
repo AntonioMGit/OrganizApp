@@ -111,7 +111,7 @@ class GraficosPorMeses : AppCompatActivity() {
 
             chart.lineChartData = data
             val viewport = Viewport(chart.maximumViewport)
-            viewport.top = 110f
+            viewport.top = 2000f
             chart.maximumViewport = viewport
             chart.currentViewport = viewport
         }else{
@@ -119,7 +119,7 @@ class GraficosPorMeses : AppCompatActivity() {
 
             chart2.lineChartData = data
             val viewport = Viewport(chart2.maximumViewport)
-            viewport.top = 110f
+            viewport.top = 2000f
             chart2.maximumViewport = viewport
             chart2.currentViewport = viewport
         }

@@ -1,5 +1,6 @@
 package com.example.organizapp
 
+import android.content.Context
 import android.content.Intent
 import android.graphics.Color
 import androidx.appcompat.app.AppCompatActivity
@@ -34,14 +35,26 @@ class Pantalla1 : AppCompatActivity() {
         lateinit var btnMas: Button
         lateinit var btnGrafica: Button
         lateinit var btnLista: Button
+        lateinit var btnSesion: Button
 
 
         btnMas = findViewById(R.id.BotonMas)
         btnGrafica = findViewById(R.id.BotonGrafica)
         btnLista = findViewById(R.id.BotonListado)
+        btnSesion = findViewById(R.id.cerrarSesion)
 
 
         ponerDatosEnGrafica(f.monthValue)
+
+        btnSesion.setOnClickListener{
+            val sharedPreferences = getSharedPreferences("sharedPrefs", Context.MODE_PRIVATE)
+            val editor = sharedPreferences.edit()
+            editor.apply{
+                putString("email", "")
+                putString("pass", "")
+            }.apply()
+        }
+
 
         btnLista.setOnClickListener {
             val intent = Intent(this, ListadoMovimientos::class.java)

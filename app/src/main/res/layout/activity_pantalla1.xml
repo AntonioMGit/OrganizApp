@@ -16,9 +16,9 @@
         android:layout_alignParentEnd="true"
         android:layout_alignParentBottom="true"
         android:layout_marginStart="16dp"
-        android:layout_marginTop="222dp"
+        android:layout_marginTop="210dp"
         android:layout_marginEnd="13dp"
-        android:layout_marginBottom="162dp" />
+        android:layout_marginBottom="174dp" />
 
     <Button
         android:id="@+id/BotonListado"
@@ -67,23 +67,53 @@
 
     <EditText
         android:id="@+id/inputFecha"
+        android:layout_width="290dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="12dp"
+        android:layout_marginTop="52dp"
+        android:layout_marginEnd="109dp"
+        android:layout_marginBottom="578dp"
+        android:background="@color/color3"
+        android:clickable="false"
+        android:focusable="false"
+        android:fontFamily="casual"
+        android:textAlignment="center"
+        android:textColor="@color/color4"
+        android:textSize="30sp"
+        android:textStyle="bold"
+        tools:ignore="SpeakableTextPresentCheck" />
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="82dp"
+        android:layout_height="71dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="306dp"
+        android:layout_marginTop="64dp"
+        android:layout_marginEnd="23dp"
+        android:layout_marginBottom="596dp"
+        app:srcCompat="@drawable/calendario" />
+
+    <Button
+        android:id="@+id/cerrarSesion"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
         android:layout_alignParentEnd="true"
         android:layout_alignParentBottom="true"
-        android:layout_marginStart="13dp"
-        android:layout_marginTop="80dp"
-        android:layout_marginEnd="13dp"
-        android:layout_marginBottom="550dp"
-        android:background="@android:color/transparent"
-        android:clickable="false"
-        android:focusable="false"
-        android:textAlignment="center"
-        android:textColor="@color/color4"
-        android:textSize="25sp"
-        tools:ignore="SpeakableTextPresentCheck" />
+        android:layout_marginStart="6dp"
+        android:layout_marginTop="1dp"
+        android:layout_marginEnd="358dp"
+        android:layout_marginBottom="693dp"
+        android:background="@drawable/flecha" />
 
 
 </RelativeLayout>
