@@ -11,6 +11,10 @@ import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.ktx.auth
 import com.google.firebase.ktx.Firebase
 
+/*
+Proyecto realizado por: Antonio, Paula y Denisa
+ */
+
 class Login : AppCompatActivity() {
 
     private lateinit var loginEmail: EditText
