@@ -10,6 +10,15 @@ import lecho.lib.hellocharts.model.*
 import lecho.lib.hellocharts.view.LineChartView
 import java.util.*
 
+/*
+
+Proyecto realizado por: Antonio, Paula y Denisa
+
+Descripción: Clase encargada de pintar dos gráficas, una de gastos y otra de ingresos de cada mes en un año.
+    Recoge los datos de Firebase y los pinta mediante LineChartView.
+
+*/
+
 private lateinit var chart: LineChartView
 private lateinit var chart2: LineChartView
 class GraficosPorMeses : AppCompatActivity() {

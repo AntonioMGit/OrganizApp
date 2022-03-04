@@ -12,8 +12,15 @@ import com.google.firebase.auth.ktx.auth
 import com.google.firebase.ktx.Firebase
 
 /*
+
 Proyecto realizado por: Antonio, Paula y Denisa
- */
+
+Descripción: Clase encargada de recibir datos de entrada del usuario y validarlos mediante Firebase.
+    Si los datos son correctos le dejará entrar en la aplicación.
+    Si son incorrectos dará un error.
+    Una vez haya iniciado sesión, al volver a pasar por esta clase el usuario logueará automáticamente hasta que decida cerrar sesión.
+
+*/
 
 class Login : AppCompatActivity() {
 

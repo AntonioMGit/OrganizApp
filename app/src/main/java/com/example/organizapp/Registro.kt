@@ -12,6 +12,17 @@ import com.google.firebase.auth.ktx.auth
 import com.google.firebase.ktx.Firebase
 import com.google.firebase.firestore.FirebaseFirestore
 
+/*
+
+Proyecto realizado por: Antonio, Paula y Denisa
+
+Descripción: Clase que permite, mediante un formulario, registrar usuarios en la aplicación.
+    Estos datos irán a Firebase que se encargará de comprobarlos.
+    Si es correcto y el usuario cumple con las condiciones se registrará.
+    Si no es correcto o el usuario ya existe dará un aviso.
+
+*/
+
 class Registro : AppCompatActivity() {
 
     private lateinit var RegistroNombre: EditText

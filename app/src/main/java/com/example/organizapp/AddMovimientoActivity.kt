@@ -15,6 +15,13 @@ import com.google.firebase.firestore.FirebaseFirestore
 import com.google.firebase.ktx.Firebase
 import java.time.LocalDate
 
+/*
+
+Proyecto realizado por: Antonio, Paula y Denisa
+
+Descripción: Clase encargada de recoger datos del usuario, mediante un formulario, y almacenarlos ordenadamente en Firebase
+
+*/
 
 class AddMovimientoActivity : AppCompatActivity() {
     private lateinit var spinner: Spinner

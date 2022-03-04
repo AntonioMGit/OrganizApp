@@ -12,6 +12,15 @@ import lecho.lib.hellocharts.model.PieChartData
 import lecho.lib.hellocharts.model.SliceValue
 import lecho.lib.hellocharts.view.PieChartView
 
+/*
+
+Proyecto realizado por: Antonio, Paula y Denisa
+
+Descripción: Clase encargada de mostrar los gastos e ingresos de un usuario en forma de lista.
+    Recoge los datos de Firebase y los pinta mediante RecyclerView.
+
+*/
+
 class ListadoMovimientos : AppCompatActivity() {
 
     lateinit var recyclerView: RecyclerView

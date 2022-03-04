@@ -6,7 +6,7 @@ import android.os.Bundle
 import android.widget.DatePicker
 import androidx.fragment.app.DialogFragment
 import java.util.*
-
+//Proyecto realizado por: Antonio, Paula y Denisa
 //Recibe una funcion con tres parametros. Extiende de DialogFragment (Crea una vista de ese tipo).
 // Implementa OnDateSetListener (avisa cuando se selecciona una fecha en el calendario)
 class DatePickerFragment(val listener: (day:Int, month:Int, year:Int) -> Unit)

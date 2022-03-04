@@ -13,6 +13,10 @@ import lecho.lib.hellocharts.view.PieChartView
 import java.time.LocalDate
 import java.time.Month
 
+/*
+ESTA CLASE NO SE USA
+ */
+
 private lateinit var chart: PieChartView
 
 class PantallaGastosCategorias : AppCompatActivity() {

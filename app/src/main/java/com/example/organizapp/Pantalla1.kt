@@ -16,6 +16,17 @@ import lecho.lib.hellocharts.view.PieChartView
 import java.time.LocalDate
 import java.time.Month
 
+/*
+
+Proyecto realizado por: Antonio, Paula y Denisa
+
+Descripción: Clase que muetra al usuario un gráfico circular de los gastos e ingresos de un mes concreto; por defecto el actual.
+    El usuario podrá cambiar la vista del mes para elegir el que desee ver.
+    Los datos se recogen mediante Firebase y se muestras con PieChartView.
+    También dispone de varios botones para desplazarse a otras pantallas de la aplicación.
+
+*/
+
 private lateinit var chart: PieChartView
 
 class Pantalla1 : AppCompatActivity() {
