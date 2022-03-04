@@ -61,28 +61,6 @@ class Pantalla1 : AppCompatActivity() {
             startActivity(intent) }
 
 
-        /*
-
-        var pieChartView = findViewById<PieChartView>(R.id.chart)
-        pieChartView = findViewById(R.id.chart)
-
-
-        val s: SliceValue = SliceValue(25f, Color.GRAY).setLabel("Q2:$4")
-
-        pieData.add(SliceValue(54f, Color.RED).setLabel("Gastos: 600€"))
-        pieData.add(SliceValue(100f, Color.GREEN).setLabel("Ingresos: 1100€"))
-
-
-        val pieChartData = PieChartData(pieData)
-
-        pieChartData.setHasLabels(true).valueLabelTextSize= 10
-        pieChartData.setHasCenterCircle(true).setCenterText1("Gastos/Ingresos")
-            .setCenterText1FontSize(15).centerText1Color= Color.parseColor("#0097A7")
-        pieChartView.pieChartData = pieChartData
-
-
-         */
-
         btnMas.setOnClickListener {
             val intent = Intent(this, AddMovimientoActivity::class.java)
             startActivity(intent) }
@@ -90,10 +68,7 @@ class Pantalla1 : AppCompatActivity() {
         btnGrafica.setOnClickListener {
             val intent = Intent(this, GraficosPorMeses::class.java)
             startActivity(intent) }
-        /*
-        btnLista.setOnClickListener {
-            val intent = Intent(this, PantallaGastosCategorias::class.java)
-            startActivity(intent) } */
+
     }
 
 

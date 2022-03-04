@@ -11,6 +11,11 @@ import com.google.firebase.firestore.FirebaseFirestore
 import com.google.firebase.ktx.Firebase
 import java.time.LocalDate
 
+/*
+ESTA CLASE NO SE USA
+ */
+
+
 class AddMovimientoCategorias : AppCompatActivity() {
 
     private lateinit var spinner: Spinner

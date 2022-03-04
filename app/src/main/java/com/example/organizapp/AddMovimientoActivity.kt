@@ -63,24 +63,8 @@ class AddMovimientoActivity : AppCompatActivity() {
             startActivity(Intent(this, Pantalla1::class.java))
         }
 
-        //lo pongo aqui para probar, hay que quitarlo de este boton
         cancelar.setOnClickListener {
-            //recogerDatosFB()
             startActivity(Intent(this, Pantalla1::class.java))
-        }
-
-    }
-
-    private fun recogerDatosFB() {
-        //https://firebase.google.com/docs/firestore/query-data/queries?hl=es-419#collection-group-query
-        val db = FirebaseFirestore.getInstance()
-
-        val gastos = db.collection("Usuarios").document(keyUser) .collection(seleccion.toString())
-
-        gastos.get().addOnSuccessListener { documents ->
-            for (document in documents) {
-                Log.d(TAG, "${document.id} => ${document.data}")
-            }
         }
 
     }
@@ -88,7 +72,6 @@ class AddMovimientoActivity : AppCompatActivity() {
     private fun guardarDatosFB(){
         val db = FirebaseFirestore.getInstance()
 
-        //hay que insertar uno por defecto siempre?
         db.collection("Usuarios").document(keyUser).collection(seleccion.toString()).document(seleccion.toString() + "por defecto").set(
             hashMapOf(
                 "Nombre" to "0",
@@ -99,7 +82,7 @@ class AddMovimientoActivity : AppCompatActivity() {
 
         val todos = db.collection("Usuarios").document(keyUser).collection(seleccion.toString())
 
-        todos.get().addOnSuccessListener { documents -> //esto es un hilo ¿?¿?¿?
+        todos.get().addOnSuccessListener { documents -> //esto es un hilo
             documents.size()
             //lo introduce
             //https://firebase.google.com/docs/firestore/data-model?hl=es-419
@@ -111,7 +94,7 @@ class AddMovimientoActivity : AppCompatActivity() {
                 )
             )
             }.addOnFailureListener {
-            Log.d(TAG, "mal")
+            Log.d(TAG, "Error al insertar")
         }
 
     }

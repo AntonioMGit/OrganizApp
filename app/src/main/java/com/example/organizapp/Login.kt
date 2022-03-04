@@ -57,13 +57,13 @@ class Login : AppCompatActivity() {
 
     }
 
-    private fun buscarDatos() { //faltaria una forma de borrar las sharedpreferences y asi volver a inciar sesion
+    private fun buscarDatos() {
         val sharedPreferences = getSharedPreferences("sharedPrefs", Context.MODE_PRIVATE)
         val emailGuardado = sharedPreferences.getString("email", "")
         val passGuardada = sharedPreferences.getString("pass", "")
 
         if(emailGuardado!="" && passGuardada!=""){
-            //Toast.makeText(applicationContext, emailGuardado + " " + passGuardada, Toast.LENGTH_LONG).show()
+
             if (emailGuardado != null) { //sino no deja¿?¿?
                 if (passGuardada != null) { //sino no deja¿?¿?
                     login(emailGuardado, passGuardada)
@@ -90,12 +90,12 @@ class Login : AppCompatActivity() {
                         putString("pass", pass) //encriptar?
                     }.apply()
 
-                    keyUser = email //la clave para luego buscar usuario y tal
+                    keyUser = email //la clave para luego buscar usuario
                     //se guarda en el companion object para que se comparta entre clases
 
                     finish()
                 } else {
-                    Toast.makeText(applicationContext, "Error", Toast.LENGTH_LONG).show()
+                    Toast.makeText(applicationContext, "Usuario o contraseña incorrectos", Toast.LENGTH_LONG).show()
 
                 }
             }

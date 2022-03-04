@@ -32,12 +32,10 @@ class PantallaGastosCategorias : AppCompatActivity() {
 
         lateinit var btnSalir: Button
         lateinit var btnMas: Button
-        // lateinit var btnLista: Button
 
 
         btnSalir = findViewById(R.id.BotonSalirC)
         btnMas = findViewById(R.id.BotonMasC)
-        //btnLista = findViewById(R.id.BotonListaC)
 
         var pieChartView = findViewById<PieChartView>(R.id.chart)
         pieChartView = findViewById(R.id.chart)
@@ -70,12 +68,6 @@ class PantallaGastosCategorias : AppCompatActivity() {
         btnMas.setOnClickListener {
                 val intent = Intent(this, AddMovimientoCategorias::class.java)
                 startActivity(intent) }
-
-        /*
-        btnLista.setOnClickListener {
-            val intent = Intent(this, Pantalla1::class.java)
-            startActivity(intent)  */
-
 
     }
 

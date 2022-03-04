@@ -28,40 +28,15 @@ class ListadoMovimientos : AppCompatActivity() {
         imgVacio = findViewById(R.id.imgVacio)
         txtSinDatos = findViewById(R.id.txtSinDatos)
 
-        //Lista de usuarios
-        //var listaMovimientos = obtenerGastos()
-
         obtenerGastos()
 
     }
 
     private fun obtenerGastos(){
-        /*
-        var lista = ArrayList<Movimiento>()
-        var m1 = Movimiento("Mov1", 1, 30.0, "2022-02-12")
-        var m2 = Movimiento("Mov2", 1, 80.0, "2022-01-03")
-        var m3 = Movimiento("Mov3", 2, 500.0, "2022-02-04")
-
-        lista.add(m1)
-        lista.add(m2)
-        lista.add(m3)
-
-        if(lista.isNotEmpty()){
-            imgVacio.visibility = View.GONE
-            txtSinDatos.visibility = View.GONE
-        }
-        else{
-            imgVacio.visibility = View.VISIBLE
-            txtSinDatos.visibility = View.VISIBLE
-        }
-
-        return lista
-         */
 
         val db = FirebaseFirestore.getInstance()
 
         val gastos = db.collection("Usuarios").document(Login.keyUser) .collection("Gasto")
-
 
         gastos.get().addOnSuccessListener { documents ->
             for (document in documents) {
@@ -74,7 +49,6 @@ class ListadoMovimientos : AppCompatActivity() {
             obtenerAhorros()
         }
 
-
     }
 
     private fun obtenerAhorros() {
@@ -86,7 +60,7 @@ class ListadoMovimientos : AppCompatActivity() {
         ingresos.get().addOnSuccessListener { documents ->
             for (document in documents) {
                 if(!document.data.get("Fecha").toString().equals("0/0/0")) {
-                    var m = Movimiento(document.data.get("Nombre").toString(), 1, document.get("Importe").toString().toDouble(), document.get("Fecha").toString())
+                    var m = Movimiento(document.data.get("Nombre").toString(), 2, document.get("Importe").toString().toDouble(), document.get("Fecha").toString())
                     lista.add(m)
                 }
             }

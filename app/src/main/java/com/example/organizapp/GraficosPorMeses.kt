@@ -8,7 +8,7 @@ import androidx.appcompat.app.AppCompatActivity
 import com.google.firebase.firestore.FirebaseFirestore
 import lecho.lib.hellocharts.model.*
 import lecho.lib.hellocharts.view.LineChartView
-import java.util.ArrayList
+import java.util.*
 
 private lateinit var chart: LineChartView
 private lateinit var chart2: LineChartView
@@ -34,7 +34,7 @@ class GraficosPorMeses : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_graficos_por_meses)
 
-        var anio = "2022"
+        var anio = Calendar.getInstance().get(Calendar.YEAR).toString()
 
         buscarEnAnio(anio, "Gasto")
 
@@ -45,27 +45,21 @@ class GraficosPorMeses : AppCompatActivity() {
     private fun buscarEnAnio(anio: String, tipo:String){
 
         val db = FirebaseFirestore.getInstance()
-        val gastos = db.collection("Usuarios").document(Login.keyUser) .collection(tipo.toString()) //cambiar la key por Login.keyUser
+        val gastos = db.collection("Usuarios").document(Login.keyUser) .collection(tipo.toString())
         var fechaSeparada: List<String>
 
         var gastosArray: IntArray = intArrayOf(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0)
 
-        //problema con esta cosa, es un hilo, con lo que si quieres que devuelva lo que haces aqui tienes que esperar a que termine
-        //si tiras normal el programa sigue y no coge los datos porque esto va mas rapido
-        //entonces hay que hacer las cosas cuando el hilo termine
         gastos.get().addOnSuccessListener { documents ->
             for (document in documents) {
-                //Log.d("noseque", "${document.id} => ${document.data}")
 
                 fechaSeparada = document.data.get("Fecha").toString().split("/")
 
                 var numAnio= fechaSeparada.get(2)
                 var numMes= fechaSeparada.get(1)
-                //Toast.makeText(applicationContext, "Mes: " + numMes, Toast.LENGTH_LONG).show()
+
                 if(numAnio.equals(anio.toString())) {
-                    //Log.d("noseque", "pasa")
-                    //pieData.add(SliceValue(54f, Color.RED).setLabel(document.data.get("Nombre").toString() + ": " + document.get("Importe").toString()))
-                    gastosArray[numMes.toInt()] += document.data.get("Importe").toString().toInt()
+                    gastosArray[numMes.toInt()-1] += document.data.get("Importe").toString().toInt()
                 }
             }
 
@@ -73,8 +67,7 @@ class GraficosPorMeses : AppCompatActivity() {
         }
 
     }
-    //hay que hacerlo asi porque sino el hilo tarda más y no se pinta nada
-    //hasta que no termine de leer los datos y hacer las cosas con ellos para poder ponerlos en las graficas no se puede hacer nadas
+
     private fun crearGrafico(gastosArray: IntArray, tipo:String) {
 
         val yAxisValues:ArrayList<PointValue> = ArrayList()
