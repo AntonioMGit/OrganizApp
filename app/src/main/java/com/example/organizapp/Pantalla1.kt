@@ -64,6 +64,11 @@ class Pantalla1 : AppCompatActivity() {
                 putString("email", "")
                 putString("pass", "")
             }.apply()
+
+            val intent = Intent(this, MainActivity::class.java)
+            startActivity(intent)
+
+            Toast.makeText(applicationContext,"Se ha cerrado sesión", Toast.LENGTH_LONG).show()
         }
 
 
